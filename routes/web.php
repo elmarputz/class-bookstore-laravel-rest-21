@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $books = [
-        'Herr der Ringe',
-        'Test 123'
-    ];
-    return view('welcome', compact('books'));
+    $books = DB::table('books')->get();
+    return $books;
+    // return view('welcome', compact('books'));
 });
