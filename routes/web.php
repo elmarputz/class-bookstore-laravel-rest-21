@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $books = DB::table('books')->get();
-    return $books;
-    // return view('welcome', compact('books'));
+    return view('welcome', compact('books'));
+});
+
+Route::get('/books/{id}', function ($id) {
+    $book = DB::table('books')->find($id);
+    dd ($book);
 });

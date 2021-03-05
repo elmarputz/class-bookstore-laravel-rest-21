@@ -7,7 +7,7 @@
 <h1>Hello</h1>
 <ul>
     @foreach ($books as $b)
-        <li> {{ $b }} </li>
+        <li> {{ $b->isbn . " " . $b->title }} </li>
    @endforeach
 
 
