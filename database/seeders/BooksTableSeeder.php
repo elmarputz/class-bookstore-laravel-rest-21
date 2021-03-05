@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use DateTime;
+use App\Models\Book;
 
 class BooksTableSeeder extends Seeder
 {
@@ -16,16 +17,13 @@ class BooksTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('books')->insert([
-            'title' => 'Herr der Ringe II',
-            'isbn' => '112323423423',
-            'subtitle' => Str::random(100),
-            'rating' => 10,
-            'description' => Str::random(1000),
-            'published' => new DateTime(),
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s"),
-
-        ]);
+        $book = new Book;
+        $book->title = 'Herr der Ringe';
+        $book->isbn = '2394823948234';
+        $book->subtitle = 'sdlfkj asldfjasldfk';
+        $book->rating = 10;
+        $book->description= 'aldkfjasf aldkjfas';
+        $book->published = new DateTime();
+        $book->save();
     }
 }
