@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $books = [
+        'Herr der Ringe',
+        'Test 123'
+    ];
+    return view('welcome', compact('books'));
 });
