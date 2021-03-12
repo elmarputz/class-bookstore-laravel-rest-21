@@ -42,7 +42,14 @@ class BooksTableSeeder extends Seeder
         $image2->url = 'https://m.media-amazon.com/images/I/A1H0tY2Se7L._AC_UY218_.jpg';
 
         $book->images()->saveMany([$image1, $image2]);
+
+        // test authors
+        $authors = \App\Models\Author::all()->pluck('id');
+        $book->authors()->sync($authors);
+
         $book->save();
+
+
 
     }
 }
