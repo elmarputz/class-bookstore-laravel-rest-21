@@ -24,7 +24,14 @@ class BooksTableSeeder extends Seeder
         $book->rating = 10;
         $book->description= 'aldkfjasf aldkjfas';
         $book->published = new DateTime();
+
+        // first user
+        $user = \App\Models\User::all()->first();
+        $book->user()->associate($user);
+
+
         $book->save();
+
 
         $image1 = new \App\Models\Image;
         $image1->title = 'Bild 1';

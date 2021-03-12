@@ -22,6 +22,7 @@ class CreateBooksTable extends Migration
             $table->date('published')->nullable();
             $table->integer('rating')->default('1');
             $table->text('description')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
