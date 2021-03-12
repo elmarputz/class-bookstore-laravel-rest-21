@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
     public function index() {
-        $books = Book::all();
-        return view('books.index', compact('books'));
+        $books = Book::with(['authors', 'images', 'user'])->get();
+        return $books;
     }
 
     public function show($book) {
