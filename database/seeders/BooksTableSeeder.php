@@ -25,5 +25,17 @@ class BooksTableSeeder extends Seeder
         $book->description= 'aldkfjasf aldkjfas';
         $book->published = new DateTime();
         $book->save();
+
+        $image1 = new \App\Models\Image;
+        $image1->title = 'Bild 1';
+        $image1->url = 'https://m.media-amazon.com/images/I/A1H0tY2Se7L._AC_UY218_.jpg';
+
+        $image2 = new \App\Models\Image;
+        $image2->title = 'Bild 2';
+        $image2->url = 'https://m.media-amazon.com/images/I/A1H0tY2Se7L._AC_UY218_.jpg';
+
+        $book->images()->saveMany([$image1, $image2]);
+        $book->save();
+
     }
 }
