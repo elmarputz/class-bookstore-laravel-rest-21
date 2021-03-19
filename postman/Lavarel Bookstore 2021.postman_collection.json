@@ -143,6 +143,44 @@
 			"response": []
 		},
 		{
+			"name": "Update Book",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"isbn\": \"9394823948234\",\n        \"title\": \"Herr der Ringe UPDATE\",\n        \"subtitle\": \"sdlfkj asldfjasldfk\",\n        \"published\": \"2021-03-12\",\n        \"rating\": 10,\n        \"user_id\": 1, \n        \"description\": \"aldkfjasf aldkjfas\",\n        \"authors\": [\n            {\n                \"id\": 1,\n                \"firstName\": \"Fritz\",\n                \"lastName\": \"Huber\"\n            }\n        ],\n        \"images\": [\n            {\n                \"url\": \"https://m.media-amazon.com/images/I/A1H0tY2Se7L._AC_UY218_.jpg\",\n                \"title\": \"Bild 1 Update\"\n            },\n            {\n                \"url\": \"https://m.media-amazon.com/images/I/A1H0tY2Se7L._AC_UY218_.jpg\",\n                \"title\": \"Bild 2\"\n            }\n        ]\n        \n    }"
+				},
+				"url": {
+					"raw": "https://bookstore21.putz.kwmhgb.at/api/book/9394823948234",
+					"protocol": "https",
+					"host": [
+						"bookstore21",
+						"putz",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"book",
+						"9394823948234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Save Book",
 			"request": {
 				"method": "POST",
@@ -160,7 +198,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": " {\n        \"isbn\": \"9394823948234\",\n        \"title\": \"Herr der Ringe\",\n        \"subtitle\": \"sdlfkj asldfjasldfk\",\n        \"published\": \"2021-03-12\",\n        \"rating\": 10,\n        \"user_id\": 1, \n        \"description\": \"aldkfjasf aldkjfas\",\n        \"authors\": [\n            {\n                \"firstName\": \"Fritz\",\n                \"lastName\": \"Huber\"\n            },\n            {\n                \"firstName\": \"Franz\",\n                \"lastName\": \"Mayer\"\n            }\n        ],\n        \"images\": [\n            {\n                \"url\": \"https://m.media-amazon.com/images/I/A1H0tY2Se7L._AC_UY218_.jpg\",\n                \"title\": \"Bild 1\"\n            },\n            {\n                \"url\": \"https://m.media-amazon.com/images/I/A1H0tY2Se7L._AC_UY218_.jpg\",\n                \"title\": \"Bild 2\"\n            }\n        ]\n        \n    }"
+					"raw": " {\n        \"isbn\": \"8394823948234\",\n        \"title\": \"Herr der Ringe \",\n        \"subtitle\": \"sdlfkj asldfjasldfk\",\n        \"published\": \"2021-03-12\",\n        \"rating\": 10,\n        \"user_id\": 1, \n        \"description\": \"aldkfjasf aldkjfas\",\n        \"authors\": [\n            {\n                \"firstName\": \"Fritz\",\n                \"lastName\": \"Huber\"\n            }\n        ],\n        \"images\": [\n            {\n                \"url\": \"https://m.media-amazon.com/images/I/A1H0tY2Se7L._AC_UY218_.jpg\",\n                \"title\": \"Bild 1 Update\"\n            },\n            {\n                \"url\": \"https://m.media-amazon.com/images/I/A1H0tY2Se7L._AC_UY218_.jpg\",\n                \"title\": \"Bild 2\"\n            }\n        ]\n        \n    }"
 				},
 				"url": {
 					"raw": "https://bookstore21.putz.kwmhgb.at/api/book",
@@ -174,6 +212,44 @@
 					"path": [
 						"api",
 						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://bookstore21.putz.kwmhgb.at/api/book/9394823948234",
+					"protocol": "https",
+					"host": [
+						"bookstore21",
+						"putz",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"book",
+						"9394823948234"
 					]
 				}
 			},
