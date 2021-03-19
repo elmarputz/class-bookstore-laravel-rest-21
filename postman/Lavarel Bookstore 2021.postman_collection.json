@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "9f4dea56-a378-404a-85bc-27a857d8c107",
+		"name": "Lavarel Bookstore 2021",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all Books",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://bookstore21.putz.kwmhgb.at/api/books",
+					"protocol": "https",
+					"host": [
+						"bookstore21",
+						"putz",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Book by ISBN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://bookstore21.putz.kwmhgb.at/api/book/2394823948234",
+					"protocol": "https",
+					"host": [
+						"bookstore21",
+						"putz",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"book",
+						"2394823948234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check ISBN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://bookstore21.putz.kwmhgb.at/api/book/checkisbn/adfasdf",
+					"protocol": "https",
+					"host": [
+						"bookstore21",
+						"putz",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"book",
+						"checkisbn",
+						"adfasdf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
