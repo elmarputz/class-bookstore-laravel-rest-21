@@ -106,6 +106,78 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Find By Search Term",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://bookstore21.putz.kwmhgb.at/api/books/search/Herr der Ringe",
+					"protocol": "https",
+					"host": [
+						"bookstore21",
+						"putz",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"books",
+						"search",
+						"Herr der Ringe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"isbn\": \"9394823948234\",\n        \"title\": \"Herr der Ringe\",\n        \"subtitle\": \"sdlfkj asldfjasldfk\",\n        \"published\": \"2021-03-12\",\n        \"rating\": 10,\n        \"user_id\": 1, \n        \"description\": \"aldkfjasf aldkjfas\",\n        \"authors\": [\n            {\n                \"firstName\": \"Fritz\",\n                \"lastName\": \"Huber\"\n            },\n            {\n                \"firstName\": \"Franz\",\n                \"lastName\": \"Mayer\"\n            }\n        ],\n        \"images\": [\n            {\n                \"url\": \"https://m.media-amazon.com/images/I/A1H0tY2Se7L._AC_UY218_.jpg\",\n                \"title\": \"Bild 1\"\n            },\n            {\n                \"url\": \"https://m.media-amazon.com/images/I/A1H0tY2Se7L._AC_UY218_.jpg\",\n                \"title\": \"Bild 2\"\n            }\n        ]\n        \n    }"
+				},
+				"url": {
+					"raw": "https://bookstore21.putz.kwmhgb.at/api/book",
+					"protocol": "https",
+					"host": [
+						"bookstore21",
+						"putz",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"book"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
