@@ -26,7 +26,11 @@ Route::get('book/{isbn}', [\App\Http\Controllers\BookController::class,'findByIS
 Route::get('book/checkisbn/{isbn}', [\App\Http\Controllers\BookController::class,'checkISBN']);
 Route::get('books/search/{searchTerm}', [\App\Http\Controllers\BookController::class,'findBySearchTerm']);
 
-/* save book uses VERB post */
-Route::post('book', [\App\Http\Controllers\BookController::class,'save']);
-Route::put('book/{isbn}', [\App\Http\Controllers\BookController::class,'update']);
-Route::delete('book/{isbn}', [\App\Http\Controllers\BookController::class,'delete']);
+// methods with authentication needed
+Route::group(['middleware' => ['api', 'auth.jwt']], function() {
+    /* save book uses VERB post */
+    Route::post('book', [\App\Http\Controllers\BookController::class,'save']);
+    Route::put('book/{isbn}', [\App\Http\Controllers\BookController::class,'update']);
+    Route::delete('book/{isbn}', [\App\Http\Controllers\BookController::class,'delete']);
+    Route::post('auth/logout', [App\Http\Controllers\AuthController::class, 'logout']);
+});
