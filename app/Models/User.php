@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable
 {
@@ -43,6 +44,15 @@ class User extends Authenticatable
     /* user has many books */
     public function books() : HasMany {
         return $this->hasMany(Book::class);
+    }
+
+
+    public function getJWTIdentifier() {
+        $this->getKey();
+    }
+
+    public function getCustomClaims() {
+        return ['user' => ['id' => $this->id]];
     }
 
 }

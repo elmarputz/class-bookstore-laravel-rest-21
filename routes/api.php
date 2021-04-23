@@ -18,6 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/* auth */
+Route::post('auth/login', [\App\Http\Controllers\AuthController::class, 'login']);
+
 Route::get('books', [\App\Http\Controllers\BookController::class,'index']);
 Route::get('book/{isbn}', [\App\Http\Controllers\BookController::class,'findByISBN']);
 Route::get('book/checkisbn/{isbn}', [\App\Http\Controllers\BookController::class,'checkISBN']);
